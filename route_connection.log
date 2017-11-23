@@ -1,0 +1,196 @@
+info: [wss.onmessage] new message received
+info: [wss.onmessage] text message content: {"route":{"type":"add","publisher":{"clientName":"bztest","name":"buttonPress","type":"boolean","remoteAddress":"127.0.0.1"},"subscriber":{"clientName":"bztest","name":"toggleBackground","type":"boolean","remoteAddress":"127.0.0.1"}}}
+
+#######
+## Pretty print version of text message content above
+#######
+ {
+ 	"route": {
+ 		"type": "add",
+ 		"publisher": {
+ 			"clientName": "bztest",
+ 			"name": "buttonPress",
+ 			"type": "boolean",
+ 			"remoteAddress": "127.0.0.1"
+ 		},
+ 		"subscriber": {
+ 			"clientName": "bztest",
+ 			"name": "toggleBackground",
+ 			"type": "boolean",
+ 			"remoteAddress": "127.0.0.1"
+ 		}
+ 	}
+ }
+######
+
+#######
+####### OUTPUT FROM ELM SPACEBREW ECHO MESSAGE STRINGS -- PUT INTO JSON LINT FOR PRETTY PRINT
+#### CONFIG message for admin client with one client already connected####
+
+[{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[{"name":"control","type":"string"}]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"}}]
+
+### PRETTY PRINT VERSION:
+[{
+	"config": {
+		"name": "PLAYER 1",
+		"description": "PLAYER 1 client ",
+		"subscribe": {
+			"messages": [{
+				"name": "control",
+				"type": "string"
+			}]
+		},
+		"publish": {
+			"messages": [{
+				"name": "player1",
+				"type": "string",
+				"default": ""
+			}]
+		},
+		"remoteAddress": "127.0.0.1"
+	}
+}]
+
+#####
+message sent when client joins
+#####
+{
+	"config": {
+		"name": "PLAYER 2",
+		"description": "PLAYER 2 client ",
+		"subscribe": {
+			"messages": [{
+				"name": "control",
+				"type": "string"
+			}]
+		},
+		"publish": {
+			"messages": [{
+				"name": "player2",
+				"type": "string",
+				"default": ""
+			}]
+		},
+		"remoteAddress": "127.0.0.1"
+	},
+	"targetType": "admin"
+}
+
+
+#####
+
+
+#### 
+#### MOCKED VERSION WITH 2 CLIENTS
+#### 
+#### This is the message that is sent when an Admin
+### client joins an existing Spacebrew session
+
+[{
+	"config": {
+		"name": "PLAYER 1",
+		"description": "PLAYER 1 client ",
+		"subscribe": {
+			"messages": [{
+				"name": "control",
+				"type": "string"
+			}]
+		},
+		"publish": {
+			"messages": [{
+				"name": "player1",
+				"type": "string",
+				"default": ""
+			}]
+		},
+		"remoteAddress": "127.0.0.1"
+	}
+}, {
+	"config": {
+		"name": "PLAYER 2",
+		"description": "PLAYER 2 client ",
+		"subscribe": {
+			"messages": [{
+				"name": "control",
+				"type": "string"
+			}]
+		},
+		"publish": {
+			"messages": [{
+				"name": "player2",
+				"type": "string",
+				"default": ""
+			}]
+		},
+		"remoteAddress": "127.0.0.1"
+	}
+}]
+
+########
+
+
+########
+Remove Message
+########
+
+{
+	"remove": [{
+		"name": "PLAYER 2",
+		"remoteAddress": "127.0.0.1"
+	}],
+	"targetType": "admin"
+}
+
+########
+
+
+
+[{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"}}]
+{"admin":true,"no_msgs":false,"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"admin":[{"admin":true}],"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[{"name":"control","type":"string"}]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+#
+#######
+
+
+
+[{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"}}]
+{"admin":true,"no_msgs":false,"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"admin":[{"admin":true}],"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+{"remove":[{"name":"PLAYER 1","remoteAddress":"127.0.0.1"}],"targetType":"admin"}
+{"config":{"name":"PLAYER 1","description":"PLAYER 1 client ","subscribe":{"messages":[{"name":"control","type":"string"}]},"publish":{"messages":[{"name":"player1","type":"string","default":""}]},"remoteAddress":"127.0.0.1"},"targetType":"admin"}
+info: [wss.onmessage] source: 127.0.0.1
+info: [receivedMessage] received new message from spacebrew server:
+info: {"route":{"type":"add","publisher":{"clientName":"bztest","name":"buttonPress","type":"boolean","remoteAddress":"127.0.0.1"},"subscriber":{"clientName":"bztest","name":"toggleBackground","type":"boolean","remoteAddress":"127.0.0.1"}},"targetType":"admin"}
+info: [handleMessage] route request received:
+info: {"route":{"type":"add","publisher":{"clientName":"bztest","name":"buttonPress","type":"boolean","remoteAddress":"127.0.0.1"},"subscriber":{"clientName":"bztest","name":"toggleBackground","type":"boolean","remoteAddress":"127.0.0.1"}},"targetType":"admin"}
+info: [handleRouteAddMessage] request received
+info: {"route":{"type":"add","publisher":{"clientName":"bztest","name":"buttonPress","type":"boolean","remoteAddress":"127.0.0.1"},"subscriber":{"clientName":"bztest","name":"toggleBackground","type":"boolean","remoteAddress":"127.0.0.1"}},"targetType":"admin"}
+info: [handleRouteAddMessage] new route:
+info: {"publisher":{"clientName":"bztest","name":"buttonPress","type":"boolean","remoteAddress":"127.0.0.1"},"subscriber":{"clientName":"bztest","name":"toggleBackground","type":"boolean","remoteAddress":"127.0.0.1"}}
+info: [saveRoutes] route model was saved to live_persist_config.json
